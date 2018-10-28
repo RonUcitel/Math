@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 
 namespace Math
 {
-    /*enum Contaned
-    {
-        No, Yes, Equal
-
-    }*/
     class Set
     {
         private int length;

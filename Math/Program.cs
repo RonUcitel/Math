@@ -11,11 +11,10 @@ namespace Math
         static void Main(string[] args)
         {
 
-            Set A = new Set(new object[] { 1, 2, 5});
+            //Set A = new Set(new object[] { 1, 2, 3});
 
-            Set C = new Set(new object[] { 1, 2 ,3, 4});
+            //Set B = new Set(new object[] { 1, A ,3});
 
-            Set B = new Set(new object[] { 1, 2, 3, 4, 5 });
             //Pair B = new Pair(1,2);
 
 
@@ -31,8 +30,18 @@ namespace Math
             //Console.WriteLine(Group.Minus(A, C).ToString() + "\n");// A\B
 
             //Console.WriteLine(Group.SymmetricDifference(A, C).ToString() + "\n");// A∆B
-            Console.WriteLine(Set.IsEqual(B,Set.Or(A,C)).ToString());
+            //Console.WriteLine(Set.P(B));
 
+            Matrix A = new Matrix(new int[,] {
+                { 1, 2, 0 },
+                { 4, 3, -1 }
+            });
+            Matrix B = new Matrix(new int[,] {
+                { -1, -2, 0 },
+                { -4, -3, 1 }
+            });
+            Matrix AB = A + B;
+            Console.Write(AB.ToString());
             Console.ReadKey();
 
 

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Matrix.cs" />
     <Compile Include="Set.cs" />
     <Compile Include="Pair.cs" />
     <Compile Include="Program.cs" />
