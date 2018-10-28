@@ -32,16 +32,17 @@ namespace Math
             //Console.WriteLine(Group.SymmetricDifference(A, C).ToString() + "\n");// A∆B
             //Console.WriteLine(Set.P(B));
 
-            Matrix A = new Matrix(new int[,] {
-                { 1, 2, 0 },
-                { 4, 3, -1 }
+            Matrix A = new Matrix(new double[,] {
+                { 0.5, 2, 0 },
+                { 4, 16, -8},
+                { 0, 2, 1 }
             });
-            Matrix B = new Matrix(new int[,] {
-                { -1, -2, 0 },
-                { -4, -3, 1 }
-            });
-            Matrix AB = A + B;
-            Console.Write(AB.ToString());
+            //Matrix B = new Matrix(new int[,] {
+            //    { -1, -2, 0 },
+            //    { -4, -3, 1 }
+            //});
+            //Matrix AB = A + B;
+            //Console.Write(Matrix.Integrate(A, 2, 0, 0.2, 1));
             Console.ReadKey();
 
 
