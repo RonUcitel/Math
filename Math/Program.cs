@@ -10,7 +10,6 @@ namespace Math
     {
         static void Main(string[] args)
         {
-
             //Set A = new Set(new object[] { 1, 2, 3});
 
             //Set B = new Set(new object[] { 1, A ,3});
@@ -43,6 +42,7 @@ namespace Math
             //});
             //Matrix AB = A + B;
             //Console.Write(Matrix.Integrate(A, 2, 0, 0.2, 1));
+            Console.WriteLine(a);
             Console.ReadKey();
 
 
