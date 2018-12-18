@@ -6,47 +6,59 @@ using System.Threading.Tasks;
 
 namespace Math
 {
-    struct Imaginary
+    struct imag//Imaginery
     {
         private double b;
-        public Imaginary(double r)
+        public imag(double r)
         {
             b = r;
         }
-        public static implicit operator Imaginary(double d)
+        public static implicit operator imag(double d)
         {
-            return new Imaginary(d);
+            return new imag(d);
         }
-        public static implicit operator (double, double) (Imaginary d)
+        public static implicit operator (double, double) (imag d)
         {
             return (0, d.b);
         }
-        public static implicit operator string(Imaginary c)
+        public static implicit operator string(imag c)
         {
             return c.ToString();
         }
 
         //+
-        public static Complex operator +(Complex c, Imaginary a)
+        public static comp operator +(comp c, imag a)
         {
-            Complex b = (0, a.b);
+            comp b = (0, a.b);
             return c + b;
         }
-        public static Complex operator +(Imaginary a, Complex c)
+        public static comp operator +(imag a, comp c)
         {
-            Complex b = (0, a.b);
+            comp b = (0, a.b);
+            return b + c;
+        }
+
+        //*
+        public static comp operator *(comp c, imag a)
+        {
+            comp b = (0, a.b);
+            return c + b;
+        }
+        public static comp operator *(imag a, comp c)
+        {
+            comp b = (0, a.b);
             return b + c;
         }
 
         //-
-        public static Complex operator -(Complex c, Imaginary a)
+        public static comp operator -(comp c, imag a)
         {
-            Complex b = (0, a.b);
+            comp b = (0, a.b);
             return c - b;
         }
-        public static Complex operator -(Imaginary a, Complex c)
+        public static comp operator -(imag a, comp c)
         {
-            Complex b = (0, a.b);
+            comp b = (0, a.b);
             return b - c;
         }
 

@@ -6,61 +6,93 @@ using System.Threading.Tasks;
 
 namespace Math
 {
-    struct Complex
+    struct comp
     {
         private double a, b;
-        public Complex((double x, double y) value)
+        public comp((double x, double y) value)
         {
             a = value.x;
             b = value.y;
         }
-        public static implicit operator Complex(double d)
+        public static implicit operator comp(double d)
         {
-            return new Complex((d, 0));
+            return new comp((d, 0));
         }
-        public static implicit operator Complex((double, double) d)
+        public static implicit operator comp((double, double) d)
         {
-            return new Complex((d.Item1, d.Item2));
+            return new comp((d.Item1, d.Item2));
         }
-        public static implicit operator string(Complex c)
+        public static implicit operator string(comp c)
         {
             return c.ToString();
         }
 
-        //+
-        public static Complex operator +(Complex c1, Complex c2)
+        //(+)
+        public static comp operator +(comp c1, comp c2)
         {
             return (c1.a + c2.a, c1.b + c2.b);
         }
 
-        //-
-        public static Complex operator -(Complex c1, Complex c2)
+        //(-)
+        public static comp operator -(comp c1, comp c2)
         {
             return (c1.a - c2.a, c1.b - c2.b);
         }
 
 
 
-        //+
-        public static Complex operator +(Complex c, double a)
+        //(+)
+        public static comp operator +(comp c, double a)
         {
             return (c.a + a, c.b);
         }
-        public static Complex operator +(double a, Complex c)
+        public static comp operator +(double a, comp c)
         {
             return (c.a + a, c.b);
         }
 
 
-        //-
-        public static Complex operator -(Complex c, double a)
+        //(-)
+        public static comp operator -(comp c, double a)
         {
             return (c.a - a, c.b);
         }
-        public static Complex operator -(double a, Complex c)
+        public static comp operator -(double a, comp c)
         {
             return (c.a - a, c.b);
         }
+
+
+        //(*)
+        public static comp operator *(comp a, comp b)
+        {
+            return (a.a*b.a -a.b*b.b, a.a*b.b+a.b*b.a);
+        }
+        public static comp operator *(double a, comp c)
+        {
+            return (c.a / a, c.b / a);
+        }
+        public static comp operator *(comp c, double a)
+        {
+            return (c.a / a, c.b / a);
+        }
+        //(/)
+        public static comp operator /(comp a, comp b)
+        {
+            return a*b/(System.Math.Pow(a.a, 2)+ System.Math.Pow(b.a, 2));
+        }
+        public static comp operator /(comp a, double b)
+        {
+            return (a.a / b, a.b / b);
+        }
+
+
+
+
+
+
+
+
         public override string ToString()
         {
             return a + "+" + b + "i";
